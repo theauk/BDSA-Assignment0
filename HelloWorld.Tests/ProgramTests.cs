@@ -4,7 +4,7 @@ using Xunit;
 
 namespace HelloWorld.Tests
 {
-    public class UnitTest1
+    public class ProgramTests
     {
         [Fact]
         public void Main_prints_Hello_World()

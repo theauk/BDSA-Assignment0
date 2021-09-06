@@ -6,7 +6,7 @@ namespace LeapYear.Tests
 {
     public class ProgramTests
     {
-
+        
         [Fact]
         public void Divisible_by_Four()
         {

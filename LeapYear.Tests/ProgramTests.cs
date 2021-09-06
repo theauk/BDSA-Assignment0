@@ -6,7 +6,7 @@ namespace LeapYear.Tests
 {
     public class ProgramTests
     {
-        
+
         [Fact]
         public void Divisible_by_Four()
         {
@@ -59,6 +59,36 @@ namespace LeapYear.Tests
             // Assert
             var output = writer.GetStringBuilder().ToString().Trim();
             Assert.Equal("nay", output);
+        }
+
+        [Fact]
+        public void Print_Requires_Int()
+        {
+            // Arrange
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+
+            // Act
+            Program.GetIsLeapYear("not an integer");
+
+            // Assert
+            var output = writer.GetStringBuilder().ToString().Trim();
+            Assert.Equal("Please input an integer", output);
+        }
+
+        [Fact]
+        public void Print_Requires_Larger_Integer()
+        {
+            // Arrange
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+
+            // Act
+            Program.GetIsLeapYear("600");
+
+            // Assert
+            var output = writer.GetStringBuilder().ToString().Trim();
+            Assert.Equal("Please input an integer larger than 1581", output);
         }
     }
 }
